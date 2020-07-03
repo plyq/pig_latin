@@ -4,7 +4,7 @@
 pub enum LetterType {
     Vowel,
     Consonant,
-    None,
+    Other,
 }
 
 pub fn letter_type(letter: char) -> LetterType {
@@ -14,7 +14,7 @@ pub fn letter_type(letter: char) -> LetterType {
             if letter.is_alphabetic() {
                 LetterType::Consonant
             } else {
-                LetterType::None
+                LetterType::Other
             }
         }
     }
@@ -36,6 +36,6 @@ mod tests {
 
     #[test]
     fn none() {
-        assert_eq!(letter_type('_'), LetterType::None);
+        assert_eq!(letter_type('_'), LetterType::Other);
     }
 }
